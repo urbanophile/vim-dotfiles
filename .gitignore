@@ -1,0 +1,15 @@
+# latex files to ignore
+*.log
+*.aux
+*.out
+*.bbl
+*.blg
+*.toc
+*.cls
+*.idx
+
+# vim files to ignore
+*.*~
+
+# archive files
+*.gz

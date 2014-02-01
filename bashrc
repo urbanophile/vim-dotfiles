@@ -1,5 +1,5 @@
 #	21/07/2013 - modified to allow infinite history and coloured syntax
-
+#       17/09/2013 added path to sbt (for Java and Scala)
 
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
@@ -128,9 +128,6 @@ if [ -z "$debian_chroot" ] && [ -r /etc/debian_chroot ]; then
 fi
 
 # set a fancy prompt (non-color, unless we know we "want" color)
-case "$TERM" in
-    xterm-color) color_prompt=yes;;
-esac
 
 # uncomment for a colored prompt, if the terminal has the capability; turned
 # off by default to not distract the user: the focus in a terminal window
@@ -202,3 +199,14 @@ fi
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
+
+export PATH=/home/matt/applications/sbt/bin:$PATH
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
+
+### Add support for 256 colour
+if [ -n "$DISPLAY" -a "$TERM" == "xterm" ]; then
+    export TERM=xterm-256color
+fi
+
